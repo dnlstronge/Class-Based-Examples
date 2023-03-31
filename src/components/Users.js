@@ -16,6 +16,7 @@ const DUMMY_USERS = [
 class Users extends Component {
 
   constructor() {
+    super()
     this.state = {
       showUsers: true,
       moreState: "test", // in the handler below only showUsers would change, React merges the state object 
@@ -44,7 +45,7 @@ class Users extends Component {
         <button onClick={this.toggleUsersHandler.bind(this)}>
           {this.state.showUsers ? 'Hide' : 'Show'} Users
         </button>
-        {this.state.showUsers && this.usersList}
+        {this.state.showUsers && usersList}
       </div>
     );
   }
