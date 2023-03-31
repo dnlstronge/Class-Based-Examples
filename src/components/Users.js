@@ -25,16 +25,26 @@ class Users extends Component {
   toggleUsersHandler() {
     this.setState((curstate) => {
       return {showUsers: !curstate.showUsers}
-    })    // always takes an object)
+    })    // always takes an object) alwatys merges
   }
 
   render() {
+
+    const usersList = (
+      <ul>
+        {DUMMY_USERS.map((user) => (
+          <User key={user.id} name={user.name} />
+        ))}
+      </ul>
+    );
+
+
     return (
       <div className={classes.users}>
         <button onClick={this.toggleUsersHandler}>
-          {this.showUsers ? 'Hide' : 'Show'} Users
+          {this.state.showUsers ? 'Hide' : 'Show'} Users
         </button>
-        {this.showUsers && this.usersList}
+        {this.state.showUsers && this.usersList}
       </div>
     );
   }
@@ -49,13 +59,7 @@ class Users extends Component {
   //   setShowUsers((curState) => !curState);
   // };
 
-//   const usersList = (
-//     <ul>
-//       {DUMMY_USERS.map((user) => (
-//         <User key={user.id} name={user.name} />
-//       ))}
-//     </ul>
-//   );
+
 
 //   return (
 //     <div className={classes.users}>
