@@ -18,12 +18,12 @@ class Users extends Component {
   constructor() {
     this.state = {
       showUsers: true,
-      moreState: "test",
+      moreState: "test", // in the handler below only showUsers would change, React merges the state object 
       usersList: DUMMY_USERS
     }
   }
   toggleUsersHandler() {
-    this.setState({}) // always takes an object)
+    this.setState({showUsers: false}) // always takes an object)
   }
 
   render() {
