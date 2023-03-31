@@ -23,7 +23,9 @@ class Users extends Component {
     }
   }
   toggleUsersHandler() {
-    this.setState({showUsers: false}) // always takes an object)
+    this.setState((curstate) => {
+      return {showUsers: curstate.showUsers}
+    })    // always takes an object)
   }
 
   render() {
