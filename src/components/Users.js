@@ -5,11 +5,6 @@ import classes from "./Users.module.css";
 
 // class based components use concstructor to define state
 // and state is always an object
-const DUMMY_USERS = [
-  { id: "u1", name: "Max" },
-  { id: "u2", name: "Manuel" },
-  { id: "u3", name: "Julie" },
-];
 
 class Users extends Component {
   constructor() {
@@ -29,7 +24,7 @@ class Users extends Component {
   render() {
     const usersList = (
       <ul>
-        {DUMMY_USERS.map((user) => (
+        {this.props.users.map((user) => (
           <User key={user.id} name={user.name} />
         ))}
       </ul>
