@@ -4,6 +4,9 @@ import { Component } from "react";
 /* repeat but use a class  */
 
 class User extends Component {
+  componentWillUnmount() {
+    console.log("user will unmount")
+  }
   render() {
     return <li className={classes.user}>{this.props.name}</li>;
   }
