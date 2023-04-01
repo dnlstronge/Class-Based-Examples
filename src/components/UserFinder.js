@@ -11,17 +11,18 @@ const DUMMY_USERS = [
 
 class UserFinder extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
       filteredUsers: DUMMY_USERS,
       searchTerm: "",
     };
   }
   componentDidUpdate(prevProps, prevState) {
-    if(prevState.searchTerm !== this.state.searchTerm) {
-    this.filteredUsers = DUMMY_USERS.filter((user) =>
-    user.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())
-  )}
+    if (prevState.searchTerm !== this.state.searchTerm) {
+      this.setState({filteredUsers: DUMMY_USERS.filter((user) =>
+        user.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())
+      )})
+    }
   }
   searchChangeHandler(e) {
     this.setState({ searchTerm: e.target.value });
