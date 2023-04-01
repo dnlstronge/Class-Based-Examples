@@ -6,13 +6,14 @@ import classes from "./Users.module.css";
 // class based components use concstructor to define state
 // and state is always an object
 
+
 class Users extends Component {
   constructor() {
     super();
     this.state = {
       showUsers: true,
       moreState: "test", // in the handler below only showUsers would change, React merges the state object
-      usersList: DUMMY_USERS,
+      //usersList: DUMMY_USERS,
     };
   }
   toggleUsersHandler() {
